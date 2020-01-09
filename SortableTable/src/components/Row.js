@@ -3,7 +3,7 @@ import './css/row.css'
 export default class Row extends React.Component {
   render() {
 
-    let row = [];
+    const row = [];
     for(let i in this.props.data){
       row.push(<div className = "cell"> {this.props.data[i]} </div>);
     }
