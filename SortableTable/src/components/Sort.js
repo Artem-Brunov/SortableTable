@@ -12,7 +12,7 @@ export default class Row extends React.Component {
 
   render() {
 
-    let buttonsRow = [];
+    const buttonsRow = [];
     for(let i in this.props.data){
       buttonsRow.push(<button className = "btn" onClick={this.onBtnClick}>{this.props.data[i]}</button>);
     }

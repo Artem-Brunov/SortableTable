@@ -28,7 +28,7 @@ class App extends Component {
 
     const table = this.props.data.map((item, index)  => (<Row key={index} data={item} />));
 
-    let heading = [];
+    const heading = [];
     for(let i in this.props.data[0]){
       heading.push(i);
     }
