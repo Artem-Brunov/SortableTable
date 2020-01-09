@@ -11,27 +11,26 @@ class App extends Component {
 
   render() {
     const sortColumn = this.props.headForSort;
-    let table = this.props.data
-    
+
     if(this.props.headForSort){
-      table.sort(function(obj1, obj2) {
-                    if(obj1[sortColumn] < obj2[sortColumn]){
-                      return -1;
-                    }
-                    else{
-                      return 1;
-                    }
-                  });
+      this.props.data.sort((obj1, obj2) => {
+                            if(obj1[sortColumn] < obj2[sortColumn]){
+                              return -1;
+                            }
+                            else{
+                              return 1;
+                            }
+                          });
       if(this.props.flag === 1){
-        table.reverse();
+        this.props.data.reverse();
       }
     }
 
-    table = this.props.data.map((item, index)  => (<Row key={index} data={item} />));
+    const table = this.props.data.map((item, index)  => (<Row key={index} data={item} />));
 
-    let heading = []
+    let heading = [];
     for(let i in this.props.data[0]){
-      heading.push(i)
+      heading.push(i);
     }
 
     return (
@@ -59,7 +58,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     sortColumnFunction: (sortType) => {
-      dispatch(sortColumnAction(sortType))
+      dispatch(sortColumnAction(sortType));
     }
   }
 }

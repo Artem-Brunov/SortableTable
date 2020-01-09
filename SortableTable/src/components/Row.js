@@ -5,10 +5,10 @@ export default class Row extends React.Component {
 
     let row = [];
     for(let i in this.props.data){
-      row.push(<div className = "cell"> {this.props.data[i]} </div>)
+      row.push(<div className = "cell"> {this.props.data[i]} </div>);
     }
 
-  
+
     return (
       <div className = "row">
         {row}
