@@ -14,7 +14,7 @@ class App extends Component {
 
     if(this.props.headForSort){
       this.props.data.sort((obj1, obj2) => {
-                            if(obj1[sortColumn] < obj2[sortColumn]){
+                            if(obj1[sortColumn].toLowerCase() < obj2[sortColumn].toLowerCase()){
                               return -1;
                             }
                             else{
