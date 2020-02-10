@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import '../components/css/row.css'
 import Sort from '../components/Sort'
 import Row from '../components/Row'
-import sortColumnAction from '../actions/actionSort';
+import { sortColumnAction, fileLoadAction } from '../actions/actionSort';
 
 
 class App extends Component {
